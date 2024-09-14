@@ -7,7 +7,16 @@ type Props = {
 export const CommentControls = ({ length }: Props) => {
   return (
     <div className="comment__controls">
-      <h1 className="comment__controls-amount">{length} комментариев</h1>
+      <h1 className="comment__controls-amount">
+        {length}{" "}
+        {length % 10 === 1 && length % 100 !== 11
+          ? "комментарий"
+          : (length % 10 === 2 && length % 100 !== 12) ||
+            (length % 10 === 3 && length % 100 !== 13) ||
+            (length % 10 === 4 && length % 100 !== 14)
+          ? "комментария"
+          : "комментариев"}
+      </h1>
       <div className="comment__controls-wrapper">
         <div className="comment__controls-sorting">
           <button className="comment__controls-date-sorting">

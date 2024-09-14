@@ -103,6 +103,13 @@ export const CommentComponent: FC<CommentInterface> = ({
               <path d="M0 0H12V2H0V0Z" fill="#D8D8D8" />
             </svg>
           </button>
+          <div className="comment__rating-extra">
+            <p className="comment__rating-extra-plus">+{comment.rating.plus}</p>
+            <span></span>
+            <p className="comment__rating-extra-minus">
+              -{comment.rating.minus}
+            </p>
+          </div>
         </div>
       </div>
       <CommentForm

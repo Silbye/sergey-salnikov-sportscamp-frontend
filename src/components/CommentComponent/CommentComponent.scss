@@ -1,9 +1,10 @@
 .comment {
   width: 100%;
-  display: flex;
+  display: grid;
   flex-direction: column;
   padding: 8px 16px;
   gap: 8px;
+  grid-gap: 8px;
   &__text {
     font-size: 14px;
     color: #222222;
@@ -13,14 +14,13 @@
 
 .comment__author {
   &-wrapper {
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
     align-items: center;
+    display: flex;
   }
   &-image {
     width: 32px;
     height: 32px;
+    margin-right: 12px;
   }
   &-info {
     margin-right: auto;
@@ -69,6 +69,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 8px;
+    position: relative;
   }
   &-button {
     background-color: #f4f4f4;
@@ -115,11 +116,78 @@
     font-size: 14px;
     font-weight: 600;
     text-align: center;
+    cursor: default;
   }
+  &-extra {
+    position: absolute;
+    right: 0px;
+    bottom: 35px;
+    z-index: 2;
+    width: 120px;
+    height: 37px;
+    padding: 0px;
+    background: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: #d6d2d2 solid 1px;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    span {
+      width: 0.5px;
+      height: 16px;
+      background-color: #d8d8d8;
+    }
+  }
+  &-extra::after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 10px 10px 0;
+    border-color: #fff transparent;
+    display: block;
+    width: 0;
+    z-index: 3;
+    bottom: -9px;
+    left: 50px;
+  }
+  &-extra::before {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 10px 10px 0;
+    border-color: #d6d2d2 transparent;
+    display: block;
+    width: 0;
+    z-index: 2;
+    bottom: -10px;
+    left: 50px;
+  }
+  &-extra-plus,
+  &-extra-minus {
+    width: 52px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  &-extra-plus {
+    color: #00a876;
+  }
+  &-extra-minus {
+    color: #ff003c;
+  }
+}
+
+.comment__rating-text:hover ~ .comment__rating-extra {
+  display: flex;
 }
 
 @media screen and (min-width: 744px) {
   .comment {
+    border-bottom: 0.5px solid #eaeaea;
     &__text {
       font-size: 16px;
     }
@@ -138,6 +206,11 @@
     }
     &-text {
       font-size: 14px;
+    }
+  }
+  .comment__bottom {
+    &-wrapper {
+      margin-bottom: 16px;
     }
   }
 }

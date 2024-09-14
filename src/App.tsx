@@ -34,17 +34,15 @@ function App() {
       <section className="comment-input container">
         <CommentForm handleNewComment={handleNewComment} length={data.length} />
       </section>
-      <section className="comments">
-        <div className="container">
-          {data.map((comment) => (
-            <CommentComponent
-              handleNewComment={handleNewComment}
-              comment={comment}
-              key={comment.id}
-              length={data.length}
-            />
-          ))}
-        </div>
+      <section className="comments container">
+        {data.map((comment) => (
+          <CommentComponent
+            handleNewComment={handleNewComment}
+            comment={comment}
+            key={comment.id}
+            length={data.length}
+          />
+        ))}
       </section>
     </div>
   );

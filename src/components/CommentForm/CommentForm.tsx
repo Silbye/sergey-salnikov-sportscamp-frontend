@@ -28,7 +28,6 @@ export const CommentForm = ({
   };
 
   function onBlur() {
-    console.log("aaa");
     return false;
   }
 

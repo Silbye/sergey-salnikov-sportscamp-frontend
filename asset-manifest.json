@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/sergey-salnikov-sportscamp-frontend/static/css/main.e42f20f0.css",
+    "main.css": "/sergey-salnikov-sportscamp-frontend/static/css/main.12677ca8.css",
     "main.js": "/sergey-salnikov-sportscamp-frontend/static/js/main.79f72bbf.js",
     "static/js/453.72c3fdf4.chunk.js": "/sergey-salnikov-sportscamp-frontend/static/js/453.72c3fdf4.chunk.js",
     "index.html": "/sergey-salnikov-sportscamp-frontend/index.html",
-    "main.e42f20f0.css.map": "/sergey-salnikov-sportscamp-frontend/static/css/main.e42f20f0.css.map",
+    "main.12677ca8.css.map": "/sergey-salnikov-sportscamp-frontend/static/css/main.12677ca8.css.map",
     "main.79f72bbf.js.map": "/sergey-salnikov-sportscamp-frontend/static/js/main.79f72bbf.js.map",
     "453.72c3fdf4.chunk.js.map": "/sergey-salnikov-sportscamp-frontend/static/js/453.72c3fdf4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e42f20f0.css",
+    "static/css/main.12677ca8.css",
     "static/js/main.79f72bbf.js"
   ]
 }

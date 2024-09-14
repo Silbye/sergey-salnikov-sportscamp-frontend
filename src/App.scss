@@ -35,6 +35,7 @@ body {
 
 button {
   cursor: pointer;
+  border: none;
 }
 
 button:disabled {
@@ -46,6 +47,7 @@ button:disabled {
   flex-direction: column;
   align-items: center;
   padding: 56px 0;
+  gap: 20px;
 }
 
 .container {
@@ -53,7 +55,7 @@ button:disabled {
   width: 100%;
 }
 
-.comments .container {
+.comments__container {
   display: flex;
   flex-direction: column;
   align-items: center;

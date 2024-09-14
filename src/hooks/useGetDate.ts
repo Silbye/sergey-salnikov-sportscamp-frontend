@@ -18,5 +18,11 @@ export function getDate() {
     "декабря",
   ];
   let monthName = month[date.getMonth()];
-  return `${day} ${monthName}, ${hour}:${min}`;
+  let str = `${day} ${monthName}, ${hour}:`;
+  if (min < 10) {
+    str += `0${min}`;
+  } else {
+    str += `${min}`;
+  }
+  return str;
 }

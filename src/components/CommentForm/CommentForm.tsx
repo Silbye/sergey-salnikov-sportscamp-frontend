@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { Comment } from "../../interfaces/comment";
 import { getDate } from "../../hooks/useGetDate";

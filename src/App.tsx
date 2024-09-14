@@ -6,6 +6,7 @@ import { Comment } from "./interfaces/comment";
 
 import { CommentComponent } from "./components/CommentComponent";
 import { CommentForm } from "./components/CommentForm";
+import { CommentControls } from "./components/CommentControls/CommentControls";
 
 function App() {
   async function fetchData() {
@@ -31,10 +32,13 @@ function App() {
 
   return (
     <div className="App">
-      <section className="comment-input container">
+      <section className="comments-controls__container container">
+        <CommentControls length={data.length} />
+      </section>
+      <section className="comment-input__container container">
         <CommentForm handleNewComment={handleNewComment} length={data.length} />
       </section>
-      <section className="comments container">
+      <section className="comments__container container">
         {data.map((comment) => (
           <CommentComponent
             handleNewComment={handleNewComment}

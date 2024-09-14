@@ -27,6 +27,15 @@ function App() {
   };
 
   useEffect(() => {
+    /*setData([
+      {
+        author: { nick: "aassasa" },
+        id: "1",
+        published: { bunin: "addaa" },
+        rating: { minus: 19, plus: 1 },
+        text: "asaddas",
+      },
+    ]);*/
     fetchData().then((data) => setData(data));
   }, []);
 

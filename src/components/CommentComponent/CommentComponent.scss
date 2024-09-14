@@ -1,0 +1,142 @@
+.comment {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px;
+  gap: 8px;
+  &__text {
+    font-size: 14px;
+    color: #222222;
+    margin-bottom: 8px;
+  }
+}
+
+.comment__author {
+  &-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+  }
+  &-image {
+    width: 32px;
+    height: 32px;
+  }
+  &-info {
+    margin-right: auto;
+  }
+  &-name {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  &-date {
+    font-size: 12px;
+    color: #7f7f7f;
+  }
+  &-dots {
+    background: none;
+    padding: 0;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.comment__response {
+  &-wrapper {
+    padding-left: 8px;
+    border-left: 2px solid #eaeaea;
+  }
+  &-author {
+    color: #7f7f7f;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  &-author b {
+    font-weight: 500;
+  }
+  &-text {
+    font-size: 12px;
+    color: #505050;
+  }
+}
+
+.comment__bottom {
+  &-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-button {
+    background-color: #f4f4f4;
+    color: #222222;
+    border: none;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 12px;
+    height: 32px;
+    &:hover {
+      background-color: #eaeaea;
+    }
+  }
+}
+
+.comment__rating {
+  &-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+  }
+  &-button {
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #f4f4f4;
+    color: #d8d8d8;
+    border: none;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      background-color: #eaeaea;
+    }
+    svg path {
+      fill: #222222;
+    }
+  }
+  &-text {
+    width: 48px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 744px) {
+  .comment {
+    &__text {
+      font-size: 16px;
+    }
+  }
+  .comment__author {
+    &-name {
+      font-size: 16px;
+    }
+    &-date {
+      font-size: 14px;
+    }
+  }
+  .comment__response {
+    &-author {
+      font-size: 14px;
+    }
+    &-text {
+      font-size: 14px;
+    }
+  }
+}

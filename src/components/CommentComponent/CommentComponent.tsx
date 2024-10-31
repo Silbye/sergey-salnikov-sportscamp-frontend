@@ -8,6 +8,10 @@ import authorImage from "../../assets/img/author.png";
 import "./CommentComponent.scss";
 import { CommentForm } from "../CommentForm";
 
+import dots from "../../assets/icons/dots.svg";
+import plus from "../../assets/icons/plus.svg";
+import minus from "../../assets/icons/minus.svg";
+
 interface CommentInterface {
   comment: Comment;
   length: number;
@@ -32,20 +36,7 @@ export const CommentComponent: FC<CommentInterface> = ({
           <p className="comment__author-date">{comment.published.bunin}</p>
         </div>
         <button className="comment__author-dots">
-          <svg
-            width="18"
-            height="4"
-            viewBox="0 0 18 4"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M4 2C4 3.10457 3.10457 4 2 4C0.895431 4 0 3.10457 0 2C0 0.895431 0.895431 0 2 0C3.10457 0 4 0.895431 4 2ZM11 2C11 3.10457 10.1046 4 9 4C7.89543 4 7 3.10457 7 2C7 0.895431 7.89543 0 9 0C10.1046 0 11 0.895431 11 2ZM16 4C17.1046 4 18 3.10457 18 2C18 0.895431 17.1046 0 16 0C14.8954 0 14 0.895431 14 2C14 3.10457 14.8954 4 16 4Z"
-              fill="#222222"
-            />
-          </svg>
+          <img src={dots} alt="" />
         </button>
       </div>
       {comment.parentComment ? (
@@ -66,20 +57,7 @@ export const CommentComponent: FC<CommentInterface> = ({
         </button>
         <div className="comment__rating-wrapper">
           <button className="comment__rating-plus comment__rating-button">
-            <svg
-              width="12"
-              height="12"
-              viewBox="0 0 12 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M7 0H5V5H0V7H5V12H7V7H12V5H7V0Z"
-                fill="#222222"
-              />
-            </svg>
+            <img src={plus} alt="" />
           </button>
           <p
             className="comment__rating-text"
@@ -93,15 +71,7 @@ export const CommentComponent: FC<CommentInterface> = ({
             {comment.rating.plus - comment.rating.minus}
           </p>
           <button className="comment__rating-minus comment__rating-button">
-            <svg
-              width="12"
-              height="2"
-              viewBox="0 0 12 2"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M0 0H12V2H0V0Z" fill="#D8D8D8" />
-            </svg>
+            <img src={minus} alt="" />
           </button>
           <div className="comment__rating-extra">
             <p className="comment__rating-extra-plus">+{comment.rating.plus}</p>

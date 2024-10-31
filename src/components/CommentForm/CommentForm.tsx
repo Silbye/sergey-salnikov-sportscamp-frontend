@@ -1,7 +1,8 @@
 import { useState } from "react";
 
 import { Comment } from "../../interfaces/comment";
-import { getDate } from "../../hooks/useGetDate";
+
+import { createNewComment } from "../../hooks/createComment";
 
 import "./CommentForm.scss";
 
@@ -31,25 +32,8 @@ export const CommentForm = ({
     return false;
   }
 
-  function createNewComment(inputValue: string) {
+  function resetInput() {
     setInputValue("");
-
-    let obj = {
-      author: { nick: "Имя Пользователя" },
-      id: length.toString(),
-      published: { bunin: getDate() },
-      rating: { plus: 0, minus: 0 },
-      text: inputValue,
-    } as Comment;
-
-    if (parentComment) {
-      obj.parentComment = {
-        id: parentComment.id,
-        author: { nick: parentComment.author.nick },
-        text: parentComment.text,
-      };
-    }
-    return obj;
   }
 
   return (
@@ -93,7 +77,10 @@ export const CommentForm = ({
           className="comment-form__moderation-button"
           disabled={!inputValue}
           onClick={() => {
-            handleNewComment(createNewComment(inputValue));
+            resetInput();
+            handleNewComment(
+              createNewComment(inputValue, length, parentComment)
+            );
             handleFocusLoss?.(onBlur());
           }}
         >
